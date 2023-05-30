@@ -28,22 +28,13 @@ services:
     image: redis:latest
     restart: always
 
-  nginx:
+  webserver:
     container_name: webserver
-    depends_on:
-      - php
     build:
       context: .
-      dockerfile: ./docker/containers/nginx/Dockerfile
+      dockerfile: ./docker/containers/php/Dockerfile
     ports:
       - '80:80'
-    volumes:
-      - ./site:/var/www/html
-      - ./docker/containers/nginx/default.conf:/etc/nginx/conf.d/default.conf
-
-  php:
-    container_name: php
-    image: php:8.1-fpm-alpine
     volumes:
       - ./site:/var/www/html
 

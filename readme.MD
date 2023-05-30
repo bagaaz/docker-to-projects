@@ -4,15 +4,15 @@
 
 Este é um ambiente de desenvolvimento dockerizado que contém as seguintes tecnologias:
 
-- Nginx
-- PHP 8.1
+- Apache2
+- PHP 8.2.6
 - MySQL
 - phpMyAdmin
 - Redis
-- Python 3.10
-- Node 18
+- Python 3.9.2
+- Node 18.16.0
 
-Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dentro do diretório `sites/` é tratada como um subdomínio do localhost. Além disso, o nginx está configurado para criar automaticamente um subdomínio para cada nova pasta adicionada ao diretório `sites/`.
+Ele foi projetado para ser altamente flexível e fácil de usar. Cada pasta dentro do diretório `sites/` é tratada como um subdomínio do localhost. Além disso, o Apache está configurado para criar automaticamente um subdomínio para cada nova pasta adicionada ao diretório `sites/`.
 
 ## Instruções de Uso
 
