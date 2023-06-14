@@ -24,6 +24,10 @@ RUN apt-get update && apt-get install -y \
 # Copy the Apache configuration file
 COPY ./docker/containers/php/default.conf /etc/apache2/sites-available/
 
+# Install MySQL extension for PHP
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+RUN docker-php-ext-enable mysqli
+
 RUN a2enmod vhost_alias && \
     a2ensite default && \
     service apache2 restart
